@@ -36,6 +36,7 @@
         </li>
         <li class="list-group-item"><b>{{__('Age')}}:</b> {{ $cat->age }}</li>
         <li class="list-group-item"><b>{{__('Gender')}}:</b> {{ __(ucfirst(strtolower($cat->gender))) }}</li>
+        <li class="list-group-item"><b>{{'Tags'}}</b> {{$cat->tags}}</li>
     </ul>
     <div class="card-body">
         <p class="card-text">{{$cat->description}}</p>

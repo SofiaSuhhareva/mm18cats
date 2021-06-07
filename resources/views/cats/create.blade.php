@@ -51,6 +51,19 @@
                 </select>
             </div>
             <div class="mb-3">
+                @error('tags')
+                <div class="alert alert-danger" role="alert">
+                    {{$message}}
+                </div>
+                @enderror
+                <label for="tags" class="form-label">Tags</label>
+                <select class="form-select" id="tags" name="tags" required>
+                    <option value="Feral" @if(old('tags')==="Feral") selected @endif>Feral</option>
+                    <option value="Domesticated" @if(old('tags')==="Domesticated") selected @endif>Domesticated</option>
+                    <option value="Tabby" @if(old('tags')==="Tabby") selected @endif>Tabby</option>
+                </select>
+            </div>
+            <div class="mb-3">
                 @error('description')
                 <div class="alert alert-danger" role="alert">
                     {{$message}}

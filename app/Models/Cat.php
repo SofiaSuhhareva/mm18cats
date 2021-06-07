@@ -9,12 +9,15 @@ class Cat extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'gender', 'birthday', 'description'];
+    protected $fillable = ['name', 'gender', 'birthday', 'description', 'tags'];
 
     protected $casts = ['birthday' => 'datetime'];
 
     public function getAgeAttribute(){
         return $this->birthday->diffInYears(\Carbon\Carbon::now());
+    }
+    public function  tags(){
+        return $this->belongsToMany(Tags::class);
     }
 
     public function images(){
